@@ -1,0 +1,513 @@
+/* Import custom font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+.boxed-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boxed-section:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+
+.hero {
+    height: 200px;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Button styling for homepage MDP try now */
+.button {
+    display: block;
+    padding: 10px;
+    margin: 20px auto;
+    font-size: 16px;
+    color: white;
+    background-color: #d4af37; 
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 50%;
+}
+/* colour change effect when hovering over button */
+.button:hover {
+    background-color: #2F1b12; 
+}
+
+/* Body and general layout for specific css */
+body {
+    font-family: 'Playfair Display', serif; 
+    background: #ffffff; 
+    color: #333333; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styling */
+h1, h2, h3 {
+    color: #333333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 3.5rem; 
+    font-weight: 600;
+    border-bottom: 3px solid #d4af37; 
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+/* Navigation styles */
+nav {
+    width: 100%;
+    background: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #e0e0e0;
+    position: relative;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: #d4af37;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+nav a {
+    color: #333333;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s;
+    z-index: 1;
+}
+
+nav a:hover {
+    color: #d4af37; 
+}
+
+nav a:hover::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 3px;
+    background: #d4af37; 
+}
+
+#toggleStylesBtn {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 12px 25px;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+#toggleStylesBtn:hover {
+    background-color: #8e44ad;
+    color: #ffffff;
+    border-color: #2458b8;
+}
+
+/*drop down styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-width: 200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 10px;
+    left: 0;
+    top: 100%;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    margin: 5px 0;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #2F1b12; 
+} 
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styles for submenu inside dropdown */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-content-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 20;
+}
+
+.dropdown-submenu:hover .dropdown-content-submenu {
+    display: block;
+}
+
+/* Form styling */
+form {
+    background: #ffffff; 
+    border-radius: 25px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+form:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-spacing: 0 20px;
+}
+
+td {
+    padding: 20px;
+}
+
+/* Input fields styling */
+input[type="text"], select {
+    width: calc(100% - 28px);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 18px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #d4af37; /* Gold border on focus */
+    outline: none;
+}
+
+input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #d4af37; /* Gold button */
+    color: #ffffff;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 30px; /* Fully rounded button */
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #b89a6f; /* Slightly darker gold on hover */
+    transform: scale(1.05);
+}
+
+/* Tooltip styles */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 280px;
+    background-color: #333333;
+    color: #ffffff;
+    text-align: left;
+    border-radius: 8px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -140px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltiptext,
+.tooltip-container .question-mark:hover + .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Results grid */
+#strokeresult, #diabresult, #kidneyresult, #heartresult {
+    font-size: 40px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.results-grid h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.results-grid div {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.results-grid div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.05); 
+    transition: opacity 0.3s;
+    opacity: 0;
+    z-index: 0;
+}
+
+.results-grid div:hover::before {
+    opacity: 1;
+}
+
+.results-grid div:hover {
+    transform: scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.results-grid div h4 {
+    color: #666666;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 400;
+}
+
+.results-grid div p {
+    color: #444444; 
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .results-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Advice Section Styling with new center align update and hover effect*/ 
+#advice-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+#advice-section p {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#advice-section p:hover {
+    background-color: #2F1b12;
+    transform: scale(1.05);
+    color: #c7934a;
+}
+
+#advice-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #ff9900;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Styling for print button */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #printableContent, #printableContent * {
+        visibility: visible;
+    }
+
+    #printableContent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 10mm;
+    }
+    /* Algining page to centre styling */
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container > #printableContent {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+/* print button appearance styling, green */
+#printResultsBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#printResultsBtn:hover {
+    background-color: #45a049;
+}
+
+#printResultsBtn:active {
+    background-color: #3e8e41;
+    transform: translateY(2px);
+}

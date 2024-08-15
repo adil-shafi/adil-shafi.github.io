@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Diabetes Datatable (Modified)</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="stylesfinal.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Predictors</a>
+            <div class="dropdown-content">
+                <a href = "heartdiseasepredictor.html">Heart Disease Predictor</a>
+                <a href = "stroke.html">Stroke Predictor</a>
+                <a href = "diabetes.html">Diabetes Predictor</a>
+                <a href = "combined.html">Combined Predictors</a>
+                <a href="probability.html">Prediction</a>
+                <a href="multiple.html">Multiple Disease Predictor</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Datasets</a>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Original Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTO.html">Diabetes Dataset</a>
+                        <a href="heartDiseaseDTO.html">Heart Disease Dataset</a>
+                        <a href="strokeDTO.html">Stroke Disease Dataset</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Modified Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTM.html">Modified Diabetes Dataset</a>
+                        <a href="heartDiseaseDTM.html">Modified Heart Disease Dataset</a>
+                        <a href="kidneyDiseaseDTM.html">Modified Chronic Kidney Disease Dataset</a>
+                        <a href="strokeDTM.html">Modified Stroke Disease Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href = "nearesthelp.html">Nearest Medical Professional  near me</a>
+        <button id="toggleStylesBtn">Switch Theme</button>
+    </nav>
+    <style>
+        td{
+            border: 1px solid rgb(0, 208, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>Diabetes Datatable (Modified)</h1>
+
+    <h2>Modifications to dataset</h2>
+    <p>The only changes made were to the smoking history section where inputs were changed from "never", "current", "former" and "ever" to "yes" and "no".<br>
+    The reason for this was during trial and error although having multiple different unique options was interesting, the variables interfered and did not correlate to other predictor models. A middle ground had to be established and the simplest option was yes and no.</p>
+    <table>
+
+    </table>
+    <script>
+        window.onload = function() {
+            fetch("./diabetes_prediction_dataset3.csv")
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(data) {
+                    var rows = data.split('\n').slice(0, 100); // only to get first 100 rows, add in description of webpage
+                    rows.forEach(function(row) {
+                        var tr = document.createElement('tr');
+                        var cells = row.split(',');
+                        cells.forEach(function(cell) {
+                            var td = document.createElement('td');
+                            td.textContent = cell;
+                            tr.appendChild(td);
+                        });
+                        document.querySelector('table').appendChild(tr);
+                    });
+                })
+                .catch(function(error) {
+                    console.error('Error fetching CSV:', error);
+                });
+        };
+    </script>
+        <script>
+            var toggleStylesBtn = document.getElementById('toggleStylesBtn');
+            var stylesheet = document.getElementById('theme-stylesheet');
+    
+            toggleStylesBtn.addEventListener('click', function() {
+                if (stylesheet.getAttribute('href') === 'stylesfinal.css') {
+                    stylesheet.setAttribute('href', 'styles3.css');
+                    toggleStylesBtn.textContent = 'Switch Theme';
+                } else {
+                    stylesheet.setAttribute('href', 'stylesfinal.css');
+                    toggleStylesBtn.textContent = 'Switch Theme';
+                }
+            });
+        </script>
+    
+    
+    
+    
+</body>
+</html>

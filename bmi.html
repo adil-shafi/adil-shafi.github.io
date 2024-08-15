@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles1.css">
+    
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Predictors</a>
+            <div class="dropdown-content">
+                <a href = "heartdiseasepredictor.html">Heart Disease Predictor</a>
+                <a href = "stroke.html">Stroke Predictor</a>
+                <a href = "diabetes.html">Diabetes Predictor</a>
+                <a href = "combined.html">Combined Predictors</a>
+                <a href="probability.html">Prediction</a>
+                <a href="multiple.html">Multiple Disease Predictor</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Datasets</a>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Original Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTO.html">Diabetes Dataset</a>
+                        <a href="heartDiseaseDTO.html">Heart Disease Dataset</a>
+                        <a href="strokeDTO.html">Stroke Disease Dataset</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Modified Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTM.html">Modified Diabetes Dataset</a>
+                        <a href="heartDiseaseDTM.html">Modified Heart Disease Dataset</a>
+                        <a href="kidneyDiseaseDTM.html">Modified Chronic Kidney Disease Dataset</a>
+                        <a href="strokeDTM.html">Modified Stroke Disease Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href = "https://www.nhs.uk/service-search/find-a-gp">Nearest Medical Professional  near me</a>
+    </nav>
+    <div class="wrapper">
+    <h3 id="info"> Enter you Height (cm) and Weight (kg) </h3>
+    <p class="input">Height (cm)</p>
+    <input type="number" onfocus="this.value=''" id="height">
+    <p class="input">Weight (kg)</p>
+    <input type="number" onfocus="this.value=''" id="weight">
+    </div>
+    <p id="output"></p>
+
+    <button id="btn" class="calculate">Calculate BMI</button>
+    <button id="btn" class="clear">Clear</button>
+    
+
+    <script src="bmiscript.js"></script>
+</body>
+</html>
+

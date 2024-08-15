@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Disease Prediction Webpage</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="stylesfinal.css">    
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Predictors</a>
+            <div class="dropdown-content">
+                <a href = "heartdiseasepredictor.html">Heart Disease Predictor</a>
+                <a href = "stroke.html">Stroke Predictor</a>
+                <a href = "diabetes.html">Diabetes Predictor</a>
+                <a href = "combined.html">Combined Predictors</a>
+                <a href="probability.html">Prediction</a>
+                <a href="multiple.html">Multiple Disease Predictor</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Datasets</a>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Original Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTO.html">Diabetes Dataset</a>
+                        <a href="heartDiseaseDTO.html">Heart Disease Dataset</a>
+                        <a href="strokeDTO.html">Stroke Disease Dataset</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Modified Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTM.html">Modified Diabetes Dataset</a>
+                        <a href="heartDiseaseDTM.html">Modified Heart Disease Dataset</a>
+                        <a href="kidneyDiseaseDTM.html">Modified Chronic Kidney Disease Dataset</a>
+                        <a href="strokeDTM.html">Modified Stroke Disease Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href = "https://www.nhs.uk/service-search/find-a-gp">Nearest Medical Professional  near me</a>
+        <button id="toggleStylesBtn">Switch Theme</button>
+
+    </nav>
+    <h1>Enter Values to get a probability of having a certain disease</h1>
+    <h3> Enter values</h3>
+    
+    <form id="prediction-form">
+        <table>
+            <tr>
+                <td>
+                    Age :
+                </td>
+                <td><input type="text" placeholder="1-100" name="age" required></td>
+            </tr>
+            <tr> 
+                <td>Gender :</td> 
+                <td>
+                    <input type="radio" id="gender-male" name="gender" value="Male">Male 
+                    <input type="radio" id="gender-female" name="gender" value="Female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Place (Country) :</td>
+                <td>
+                    <select name="place" required>
+                        <option value="Cleveland">Cleveland</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="VA Long Beach">VA Long Beach</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Do you smoke?</td>
+                <td><input type ="checkbox" name="smokes" value ="yes"></td>
+            </tr>
+            <tr>
+                <td>Do you drink?</td>
+                <td><input type ="checkbox" name="drinks" value ="yes"></td>
+            </tr>
+            <tr>  
+                <td><br></br>
+                <input type="submit" value="Submit"></td>
+            </tr>
+        
+        </table> 
+
+    </form><br></br>
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            var queryString = new URLSearchParams(formData).toString();
+
+            window.location.href = `probability.html?${queryString}`;
+        });
+    </script>
+
+<script>
+    var toggleStylesBtn = document.getElementById('toggleStylesBtn');
+    var stylesheet = document.getElementById('theme-stylesheet');
+
+    toggleStylesBtn.addEventListener('click', function() {
+        if (stylesheet.getAttribute('href') === 'stylesfinal.css') {
+            stylesheet.setAttribute('href', 'styles3.css');
+            toggleStylesBtn.textContent = 'Switch Theme';
+        } else {
+            stylesheet.setAttribute('href', 'stylesfinal.css');
+            toggleStylesBtn.textContent = 'Switch Theme';
+        }
+    });
+</script>
+</body>
+</html>

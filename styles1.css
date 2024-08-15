@@ -1,0 +1,325 @@
+/* for menu transition underline
+ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+ul li {
+    color: #fff;
+    display: grid;
+    place-content: center;
+    margin: 0;
+    position: relative;
+}
+
+.menu {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+.menu::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all .5s ease;
+    bottom : 0;
+    left: 0;
+}
+
+.menu:hover::before{
+    transform: scaleX(1);
+}
+*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c 0%, #2c2c54 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav {
+    margin-bottom: 40px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #2458b8;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background-color: #8e44ad;
+    transform: scale(1.1);
+}
+
+/* Styles for main dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 10px;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    margin: 5px 0;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    color: #ffffff;
+    background-color: #8e44ad;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styles for submenu inside dropdown */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-content-submenu {
+    display: none;
+    position: absolute;
+    left: 100%; /* Position to the right after main dropdown */
+    top: 0;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-submenu:hover .dropdown-content-submenu {
+    display: block;
+}
+
+/* Styling to show only main menu */
+.dropdown-content .dropdown-content-submenu {
+    display: none; 
+}
+/* Stylign to show submenu after hover effect */
+.dropdown-content .dropdown-submenu:hover .dropdown-content-submenu {
+    display: block;
+}
+form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+td {
+    padding: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    background: #fff;
+    transform: scale(1.05);
+    outline: none;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #9b59b6;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #8e44ad;
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    input[type="text"], select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+#result {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: orange;
+}
+
+#mistake{
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+#user-input{
+    font-size: 25;
+    color: skyblue;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#risk{
+    font-size: 23px
+
+}
+
+p.input {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+
+.wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+input[type="number"]:focus {
+    background: #fff;
+    transform: scale(1.05);
+    outline: none;
+}
+
+button.calculate, button.clear {
+    background-color: #2458b8;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button.calculate:hover, button.clear:hover {
+    background-color: #8e44ad;
+    transform: scale(1.1);
+}
+
+#output {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: orange;
+    margin: 20px 0;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    input[type="number"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button.calculate, button.clear {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+

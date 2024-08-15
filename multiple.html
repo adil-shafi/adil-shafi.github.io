@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multiple Disease Predictor</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="stylesfinal.css">
+    
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Predictors</a>
+            <div class="dropdown-content">
+                <a href = "heartdiseasepredictor.html">Heart Disease Predictor</a>
+                <a href = "stroke.html">Stroke Predictor</a>
+                <a href = "diabetes.html">Diabetes Predictor</a>
+                <a href = "combined.html">Combined Predictors</a>
+                <a href="probability.html">Prediction</a>
+                <a href="multiple.html">Multiple Disease Predictor</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Datasets</a>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Original Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTO.html">Diabetes Dataset</a>
+                        <a href="heartDiseaseDTO.html">Heart Disease Dataset</a>
+                        <a href="strokeDTO.html">Stroke Disease Dataset</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Modified Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTM.html">Modified Diabetes Dataset</a>
+                        <a href="heartDiseaseDTM.html">Modified Heart Disease Dataset</a>
+                        <a href="kidneyDiseaseDTM.html">Modified Chronic Kidney Disease Dataset</a>
+                        <a href="strokeDTM.html">Modified Stroke Disease Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href = "https://www.nhs.uk/service-search/find-a-gp">Nearest Medical Professional  near me</a>
+
+        <button id="toggleStylesBtn">Switch Theme</button>
+    </nav>
+
+    <h1>Multiple Disease Predictor</h1>
+    <div id="printableContent">
+    <h2>Enter Values</h2>
+
+    <form id="multiplePrediction-form">
+        <table>
+            <tr>
+                <td>Age : </td>
+                <td><input type="text" placeholder="1-100" name="strokeAge" required></td>
+            </tr>
+            <tr>
+                <td>Gender :</td>
+                <td>
+                    <input type="radio" id="gender-male" name="gender" value="Male">Male
+                    <input type="radio" id="gender-female" name="gender" value="Female">Female
+                    <input type="radio" id="gender-prefer" name="gender" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>What is you ethnicity?</td>
+                <td>
+                    <input type="radio" id="ethnicity-0" name="ethnicity" value="0">Caucasian
+                    <input type="radio" id="ethnicity-1" name="ethnicity" value="1">African American
+                    <input type="radio" id="ethnicity-2" name="ethnicity" value="2">Asian
+                    <input type="radio" id="ethnicity-3" name="ethnicity" value="3">Other
+                    <input type="radio" id="ethnicity-prefer" name="ethnicity" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>What is your highest level of education?</td>
+                <td>
+                    <input type="radio" id="education-0" name="education" value="0">None
+                    <input type="radio" id="education-1" name="education" value="1">High School
+                    <input type="radio" id="education-2" name="education" value="2">Bachelor's
+                    <input type="radio" id="education-3" name="education" value="3">Higher
+                    <input type="radio" id="education-prefer" name="education" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>How much physical exercise do you do weekly?</td>
+                <td>
+                    <input type="radio" id="exercise-0-2" name="exercise" value="0-2">0-2 Hours
+                    <input type="radio" id="exercise-2-4" name="exercise" value="2-4">2-4 Hours
+                    <input type="radio" id="exercise-4-6" name="exercise" value="4-6">4-6 Hours
+                    <input type="radio" id="exercise-6-8" name="exercise" value="6-8">6-8 Hours
+                    <input type="radio" id="exercise-8-10" name="exercise" value="8-10">8-10 Hours
+                    <input type="radio" id="exercise-prefer" name="exercise" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>Do you have any chest pain?</td>
+                <td>
+                    <input type="radio" id="chestPain-1" name="chestPain" value="1">Typical angina
+                    <input type="radio" id="chestPain-2" name="chestPain" value="2">Atypical angina
+                    <input type="radio" id="chestPain-3" name="chestPain" value="3"> Non-anginal pain
+                    <input type="radio" id="chestPain-4" name="chestPain" value="4">Asymptomatic
+                    <input type="radio" id="chestPain-prefer" name="chestPain" value="Prefer" checked>Prefer not to say
+                    <span class="tooltip">
+                        <button type="button" class="question-mark">?</button>
+                        <span class="tooltiptext">
+                            <strong>Typical angina:</strong>Chest pain or discomfort as a result of heart not getting enough blood. Squeezing and pressure like pain in chest. Usually after physical activity<br>
+                            <strong>Atypical angina:</strong>Pain is less intense than Typical Angina. More commonly a burning sensation like indigestion. <br>
+                            <strong>Non-anginal pain:</strong>Chest pain NOT related to a heart problem.<br>
+                            <strong>Asymptomatic:</strong>No symptoms of heart disease. You may still have heart disease but there are no symptos like chest pain.
+
+                        </span>
+                    </span>
+                </td>
+            </tr> 
+            <tr>
+                <td>Do you have hypertension?</td>
+                <td>
+                    <input type="radio" id="hypertension-yes" name="hypertension" value="1">Yes
+                    <input type="radio" id="hypertension-no" name="hypertension" value="0">No
+                    <input type="radio" id="hypertension-prefer" name="hypertension" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>Do you have any heart related disease?</td>
+                <td>
+                    <input type="radio" id="disease-yes" name="disease" value="1">Yes
+                    <input type="radio" id="disease-no" name="disease" value="0">No
+                    <input type="radio" id="disease-prefer" name="disease" value="Prefer" checked>Prefer not to say
+                </td>
+            </tr>
+            <tr>
+                <td>Have you or ar you married?</td>
+                <td>
+                    <input type="radio" id="married-yes" name="married" value="Yes">Yes
+                    <input type="radio" id="married-no" name="married" value="No">No
+                    <input type="radio" id="married-prefer" name="married" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>Where do you live?</td>
+                <td>
+                    <input type="radio" id="residence-rural" name="residence" value="Rural">Rural
+                    <input type="radio" id="residence-urban" name="residence" value="Urban">Urban
+                    <input type="radio" id="residence-prefer" name="residence" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>What is your occupation?</td>
+                <td>
+                    <input type="radio" id="occupation-private" name="occupation" value="Private">Private
+                    <input type="radio" id="occupation-selfemployed" name="occupation" value="Self-employed">Self-employed
+                    <!--<input type="radio" id="occupation-never" name="occupation" value="Never_worked">Never Worked -->
+                    <input type="radio" id="occupation-education" name="occupation" value="children">Full time education (16 and under)
+                    <input type="radio" id="occupation-gov" name="occupation" value="Govt_job">Government Related Job
+                    <input type="radio" id="occupation-prefer" name="occupation" value="Prefer" checked>Prefer not to say
+                </td>
+            </tr>
+            <tr>
+                <td>Do you or have you ever smoked?</td>
+                <td>
+                    <input type="radio" id="smoker-yes" name="smoker" value="yes">Yes
+                    <input type="radio" id="smoker-no" name="smoker" value="no">No
+                    <input type="radio" id="smoker-prefer" name="smoker" value="Prefer" checked>Prefer not to say
+                </td>
+            </tr>
+            <tr>
+                <td>How many units of alcohol do you drink per week?</td>
+                <td>
+                    <input type="radio" id="alc-0-2" name="alc" value="0-2">0-2
+                    <input type="radio" id="alc-2-5" name="alc" value="2-5">2-5
+                    <input type="radio" id="alc-5-8" name="alc" value="5-8">5-8
+                    <input type="radio" id="alc-8-11" name="alc" value="8-11">8-11
+                    <input type="radio" id="alc-11-14" name="alc" value="11-14">11-14
+                    <input type="radio" id="alc-14" name="alc" value="14">14+
+                    <input type="radio" id="alc-prefer" name="alc" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>What is your Blood Glucose Level?</td>
+                <td>
+                    <input type="radio" id="bgl-normal" name="bgl" value="Normal">Normal 
+                    <input type="radio" id="bgl-borderline" name="bgl" value="Borderline">Borderline 
+                    <input type="radio" id="bgl-high" name="bgl" value="High">High 
+                    <input type="radio" id="bgl-prefer" name="bgl" value="Prefer" checked>Prefer not to say
+
+                    <span class="tooltip">
+                        <button type="button" class="question-mark">?</button>
+                        <span class="tooltiptext">
+                            <strong>Normal:</strong>  80 mg/dL - 140 mg/dL<br>
+                            <strong>Borderline:</strong>  ~140 mg/dL - 199 mg/dL<br>
+                            <strong>High:</strong>  >199 mg/dL<br>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Do you have any family history of hypertension?</td>
+                <td>
+                    <input type="radio" id="famHypertension-yes" name="famHypertension" value="1">Yes
+                    <input type="radio" id="famHypertension-no" name="famHypertension" value="0">No
+                    <input type="radio" id="famHypertension-prefer" name="famHypertension" value="Prefer" checked>Prefer not to say
+                </td>
+            </tr>
+            <tr>
+                <td>Do you have any family history of diabetes?</td>
+                <td>
+                    <input type="radio" id="famDiab-yes" name="famDiab" value="1">Yes
+                    <input type="radio" id="famDiab-no" name="famDiab" value="0">No
+                    <input type="radio" id="famDiab-prefer" name="famDiab" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+            <tr>
+                <td>Do you have any family history of kidney disease?</td>
+                <td>
+                    <input type="radio" id="famKidney-yes" name="famKidney" value="1">Yes
+                    <input type="radio" id="famKidney-no" name="famKidney" value="0">No
+                    <input type="radio" id="famKidney-prefer" name="famKidney" value="Prefer" checked>Prefer not to say
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <br><br><br><br>
+    <h2 id="finalresult">Probability of having:</h2>
+    <div class="results-grid">
+        <div class="result-item">
+            <h3> Stroke:</h3>
+            <p id="strokeresult"></p>
+        </div>
+        <div class="result-item">
+            <h3>Diabetes:</h3>
+            <p id="diabresult"></p>
+        </div>
+        <div class="result-item">
+            <h3>Heart Disease:</h3>
+            <p id="heartresult"></p>
+        </div>
+        <div class="result-item">
+            <h3>Chronic Kidney Disease:</h3>
+            <p id="kidneyresult"></p>
+        </div>
+    </div>
+
+
+
+    <br><br><br><br>
+    <h3>How to potentially lower your risk:</h3>
+    <div id="advice-section">
+    <p id="residenceAdvice"></p>
+    <p id="smokingAdvice"></p>
+    <p id="alcAdvice"></p>
+    <p id="exerciseAdvice"></p>
+    </div>
+</div>
+
+    <h4>Please note this is not a medical tool</h4>
+
+
+    <script src="multiple.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <div id="content">
+        <button id="printResultsBtn">Print Results</button>
+    </div>
+
+
+    <script>
+        var printBtn = document.getElementById('printResultsBtn');
+
+        printBtn.addEventListener('click', function() {
+            print();
+        });
+    
+        var toggleStylesBtn = document.getElementById('toggleStylesBtn');
+        var stylesheet = document.getElementById('theme-stylesheet');
+
+        toggleStylesBtn.addEventListener('click', function() {
+            if (stylesheet.getAttribute('href') === 'stylesfinal.css') {
+                stylesheet.setAttribute('href', 'styles3.css');
+                toggleStylesBtn.textContent = 'Switch Theme';
+            } else {
+                stylesheet.setAttribute('href', 'stylesfinal.css');
+                toggleStylesBtn.textContent = 'Switch Theme';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Probability</title>
+    <link rel="stylesheet" href="styles1.css">
+    
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Predictors</a>
+            <div class="dropdown-content">
+                <a href = "heartdiseasepredictor.html">Heart Disease Predictor</a>
+                <a href = "stroke.html">Stroke Predictor</a>
+                <a href = "diabetes.html">Diabetes Predictor</a>
+                <a href = "combined.html">Combined Predictors</a>
+                <a href="probability.html">Prediction</a>
+                <a href="multiple.html">Multiple Disease Predictor</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:void(0)">Datasets</a>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Original Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTO.html">Diabetes Dataset</a>
+                        <a href="heartDiseaseDTO.html">Heart Disease Dataset</a>
+                        <a href="strokeDTO.html">Stroke Disease Dataset</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="javascript:void(0)">Modified Datasets</a>
+                    <div class="dropdown-content-submenu">
+                        <a href="diabetesDTM.html">Modified Diabetes Dataset</a>
+                        <a href="heartDiseaseDTM.html">Modified Heart Disease Dataset</a>
+                        <a href="kidneyDiseaseDTM.html">Modified Chronic Kidney Disease Dataset</a>
+                        <a href="strokeDTM.html">Modified Stroke Disease Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href = "https://www.nhs.uk/service-search/find-a-gp">Nearest Medical Professional  near me</a>
+    </nav>
+
+    <h1>Heart Disease Prediction</h1>
+    <h3>Results:</h3>
+
+    <p id="result"></p>
+    <p id="risk"></p>
+
+
+    <div id="user-input">
+        <h3>You Have Entered:</h3> 
+        <p><strong>Age:</strong> <span id="age"></span></p>
+        <p><strong>Gender:</strong> <span id="gender"></span></p>
+        <p><strong>Place:</strong> <span id="place"></span></p>
+        <!--<p><strong>Smokes:</strong> <span id="smokes"></span></p>
+        <p><strong>Drinks:</strong> <span id="drinks"></span></p> -->
+    </div>
+
+    <script src="mainscript.js"></script>
+    <script>
+        function getUrlParameter(name) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        var age = getUrlParameter('age');
+        var gender = getUrlParameter('gender');
+        var place = getUrlParameter('place');
+        var smokes = getUrlParameter('smokes') === 'yes' ? 'yes' : "No";
+        var drinks = getUrlParameter('drinks') === 'yes' ? 'yes' : "No";
+
+        console.log('Age:', age);
+        console.log('Gender:', gender);
+        console.log('place:', place);
+        
+        if (age && gender && place) {
+            var probability = calculateProbability(age, gender, place, smokes, drinks);
+            document.getElementById('result').innerText = "Probability of having a heart related disease: " + (probability * 100).toFixed(2) + "%";
+
+            document.getElementById('age').innerText = age;
+            document.getElementById('gender').innerText = gender;
+            document.getElementById('place').innerText = place;
+
+        // riskClass currently not functional, ideally have different CSS coloured fonts to display different riskClass
+        var riskMessage = "";
+        if (probability < 0.30) {
+            riskMessage = "Low risk of disease";
+            riskClass = "low-risk"; 
+        } else if (probability >= 0.31 && probability <= 0.50) {
+            riskMessage = "Moderate risk of disease";
+            riskClass = "moderate-risk";
+        } else if (probability > 0.50) {
+            riskMessage = "High risk of disease";
+            riskClass = "high-risk";
+        }
+        document.getElementById('risk').innerText = riskMessage;
+            
+    } else {
+            document.getElementById('result').innerText = "Parameter missing. Please select your gender to calculate probability of heart related disease.";
+        }
+    </script>
+    
+    <br>
+    <div id="mistake">
+    <a href = "heartdiseasepredictor.html">Made a mistake? Try again</a>
+    </div>
+
+   
+    
+</body>
+
+</html>
