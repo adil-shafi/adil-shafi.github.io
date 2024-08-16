@@ -8,7 +8,7 @@ This project is a web-based disease prediction tool that uses Naïve Bayes Algor
 - [Features](#Features)
 - [Usage](#Usage)
 - [Technologies Used](#Technologies-Used)
-- [Future Improvement](#Future-Improvements)
+- [Future Improvements](#Future-Improvements)
 
 
 
