@@ -1,40 +1,4 @@
-/* for menu transition underline
-ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-}
-
-ul li {
-    color: #fff;
-    display: grid;
-    place-content: center;
-    margin: 0;
-    position: relative;
-}
-
-.menu {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-}
-.menu::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: all .5s ease;
-    bottom : 0;
-    left: 0;
-}
-
-.menu:hover::before{
-    transform: scaleX(1);
-}
-*/
+/* Similar but specific styling for BMI Calculator page */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #1c1c1c 0%, #2c2c54 100%);
