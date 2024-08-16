@@ -189,7 +189,7 @@ nav a:hover {
     transition: background-color 0.3s ease;
     max-width: 50%;
 }
-/* colour change effect when hovering over button */
+/* Colour change effect when hovering over button */
 .button:hover {
     background-color: #8e44ad; 
 }
