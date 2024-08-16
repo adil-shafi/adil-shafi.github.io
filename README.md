@@ -46,6 +46,19 @@ Key Features of the MDP include:
 -	Switching themes which brings a new vivid and dynamic feel to the website
 -	Tooltip question marks to help users understand some of the medical wording used
 
+### Usage
+Start by trying out the MDP for the most advanced predictions
+
+Input values in the fields and click submit. The page should automatically scroll to the result.
+
+If you scroll further down you will see advice on how to potentially lower the risk of having certain diseases.
+
+Print the results! This button will print the values you have input and the results.
+
+Now try out the other predictors by scrolling up and using the navigation panel.
+
+Information about the data sets can be found in the dataset tab.
+
 
 ### Technologies Used
 HTML was used for structuring the webpage including the form tables, navigation bar, buttons and more.
