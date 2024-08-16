@@ -577,13 +577,7 @@ function calculateHeartDiseaseProbability(data, heartAge, gender, chestPain) {
     return finalProbabilityOfHeartDisease;
 }
 
-//big O
-/*
-what parameters you have
-how long it takes to run can be calculated
-for 1 disease = only thing ffecting is no. of attributes. time complexity = Big O of number of attributes ---- also for hard coded only
-same thing for one disease by looking dataset = complexity is larger 
-*/
+
 
 //Kidney Predictor
 document.getElementById('multiplePrediction-form').addEventListener('submit', function(event) {
