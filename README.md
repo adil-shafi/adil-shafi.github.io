@@ -12,7 +12,7 @@ This project is a web-based disease prediction tool that uses Naïve Bayes Algor
 
 
 
-### Installation
+## Installation
 The website is currently running on GitHub Pages at [adil-shafi.github.io/index.html](https://adil-shafi.github.io/)
 This is a fairly new way of hosting the website and in the event there are issues, below are instructions on loading the files into VSCode with the required extensions.
 
@@ -37,7 +37,7 @@ Right-click on index.html in the workspace and click on Open with Live Server. T
 
 
 
-### Features
+## Features
 
 Key Features of the MDP include:
 -	Getting results for 4 different diseases simultaneously with aesthetically pleasing colours that correspond to the severity of the probability output
@@ -46,7 +46,7 @@ Key Features of the MDP include:
 -	Switching themes which brings a new vivid and dynamic feel to the website
 -	Tooltip question marks to help users understand some of the medical wording used
 
-### Usage
+## Usage
 Start by trying out the MDP for the most advanced predictions
 
 Input values in the fields and click submit. The page should automatically scroll to the result.
@@ -60,7 +60,7 @@ Now try out the other predictors by scrolling up and using the navigation panel.
 Information about the data sets can be found in the dataset tab.
 
 
-### Technologies Used
+## Technologies Used
 HTML was used for structuring the webpage including the form tables, navigation bar, buttons and more.
 
 CSS was used for styling the web pages and to add animations and media to the pages. There is a lot of CSS styling used for aesthetically coordinated themes. The final iteration of the webpage uses 2 styling files to implement a sort of light/dark mode to the webpage.
@@ -71,7 +71,7 @@ The Naïve Bayes Algorithm was the main algorithm of choice as it was perfect fo
 
 
 
-### Future Improvements
+## Future Improvements
 The project is complete and could be further modified by adding more datasets with different diseases. As more medically researched data becomes available this project is able to handle and make predictions using Naïve Bayes with minimal changes to the codebase.
 
 Body Mass Index (BMI) was an attribute that was found in most of the datasets used but was excluded from being used for calculations as it was found that BMI is subjective data. It's highly possible for 2 different individuals to have the same BMI but with completely different lifestyle choices and fat/muscle ratio that dictate their health. For this reason, it was excluded and attributes that the average person was more likely to have knowledge of were used.
