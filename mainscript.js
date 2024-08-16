@@ -94,7 +94,7 @@ function calculateProbability(age, gender, place, smokes, drinks){
         probNoDisease *= pNoDrinkGivenNoDisease;
     }
 
-    var finalProbabilityOfDisease = probDisease / (probDisease + probNoDisease); // Bayes Theorem formula
+    var finalProbabilityOfDisease = probDisease / (probDisease + probNoDisease); // Naive Bayes Algorithm Formula
     return finalProbabilityOfDisease;
 }
 
